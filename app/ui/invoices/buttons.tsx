@@ -1,3 +1,5 @@
+'use client';
+
 import { PencilIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { deleteInvoice } from '@/app/lib/actions';
@@ -27,10 +29,12 @@ export function UpdateInvoice({ id }: { id: string }) {
 }
 
 export function DeleteInvoice({ id }: { id: string }) {
-  // let isConfirm=window.confirm(`Delete ${id}?`)
-  // if(!isConfirm){
-  //   return
-  // }  
+  const deleteConfirm=()=>{
+  let isConfirm=window.confirm(`Delete ${id}?`)
+    if(!isConfirm){
+      return
+    }      
+  }
   const deleteInvoiceWithId = deleteInvoice.bind(null, id);
   return (
     <form action={deleteInvoiceWithId}>
