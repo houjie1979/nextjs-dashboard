@@ -1,4 +1,5 @@
 import '@/app/ui/global.css'
+import '@/app/ui/globals.scss'
 import { inter } from '@/app/ui/fonts'
 import { Metadata } from 'next';
 
